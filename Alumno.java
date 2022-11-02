@@ -42,6 +42,12 @@ public class Alumno {
      * en su cuenta de Github en formato de 7 caracateres
      */
     public String getNombreUsuarioGithub() {
+        if(nombre.length() < 3) {
+            System.out.println("ERROR, nombre con menos de 3 letras");
+        }
+        if(numeroMatricula.length() < 4) {
+            System.out.println("ERROR, numeroMatricula no tiene 4 digitos");
+        }
         return nombre.substring(0, 3) + numeroMatricula.substring(0, 4);
     }
 }
