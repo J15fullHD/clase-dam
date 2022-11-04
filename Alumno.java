@@ -17,7 +17,7 @@ public class Alumno {
         if(nombre.length() < 3) {
             System.out.println("ERROR, nombre con menos de 3 letras");
         }
-        if(numeroMatricula.length() < 4) {
+        if(numeroMatricula.length() != 4) {
             System.out.println("ERROR, numeroMatricula no tiene 4 digitos");
         }
     }
@@ -48,6 +48,11 @@ public class Alumno {
      * en su cuenta de Github en formato de 7 caracateres
      */
     public String getNombreUsuarioGithub() {
+        if(nombre.length() < 3) {
+            nombre = nombre + "_";
+        } if(numeroMatricula.length() != 4) {
+            numeroMatricula = numeroMatricula + "_";
+        }
         return nombre.substring(0, 3) + numeroMatricula.substring(0, 4);
     }
 }
